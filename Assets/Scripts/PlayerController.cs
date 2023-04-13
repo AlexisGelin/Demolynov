@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public float speed = 100f;
     public int IDPlayer;
+    public GameObject mesh;
 
     void Update()
     {
@@ -16,19 +17,22 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Z))
             {
+                mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.forward * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.Q))
             {
-                transform.LookAt(transform.position + Vector3.left * speed * Time.deltaTime);
+                mesh.transform.DORotate(new Vector3(0, -90, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.S))
             {
+                mesh.transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.back * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.D))
             {
+                mesh.transform.DORotate(new Vector3(0, 90, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.A))
