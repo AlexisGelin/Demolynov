@@ -70,7 +70,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     void HandleGame()
     {
-
+        PartyManager.Instance.Init();
     }
 
     public void SwitchPause()
