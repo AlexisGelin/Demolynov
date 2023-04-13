@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ArtAssets/Character/Unity package/animatedCharacters2.unitypackage.meta
 guid: 708fc06bbd035904b91c61eb1c856469
+========
+guid: f54a789cf573f064f8f9914195032840
+>>>>>>>> destruc:Assets/Scenes/clement.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
