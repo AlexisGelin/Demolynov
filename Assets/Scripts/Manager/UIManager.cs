@@ -106,6 +106,11 @@ public class UIManager : MonoSingleton<UIManager>
         ChangePanel(_settingPanel, true);
     }
 
+    public void HandleCloseSettings()
+    {
+        Debug.Log("ccc");
+        ChangePanel(_menuPanel);
+    }
 
     #endregion
 
