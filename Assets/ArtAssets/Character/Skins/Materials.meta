@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ArtAssets/Character/Skins/Materials.meta
 guid: a0b6368ce3f2cd94db5b62ff20ba6d0f
 folderAsset: yes
+========
+guid: 3c233c81b73290e40a9d9ad6342e7806
+>>>>>>>> Player-controller:Assets/Scenes/Alexis.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
