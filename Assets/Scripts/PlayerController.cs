@@ -46,7 +46,11 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
-                animationPlayer.SetTrigger("punch");
+                animationPlayer.SetBool("punch", true);
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                animationPlayer.SetBool("punch", false);
             }
             if (Input.GetKey(KeyCode.E))
             {
@@ -85,7 +89,11 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.I))
             {
-                animationPlayer.SetTrigger("punch");
+                animationPlayer.SetBool("punch", true);
+            }
+            if (Input.GetKeyUp(KeyCode.I))
+            {
+                animationPlayer.SetBool("punch", false);
             }
             if (Input.GetKey(KeyCode.P))
             {
