@@ -478,6 +478,7 @@ MonoBehaviour:
   speed: 10
   IDPlayer: 1
   mesh: {fileID: 0}
+  animationPlayer: {fileID: 0}
 --- !u!1 &422563102
 GameObject:
   m_ObjectHideFlags: 3
@@ -735,6 +736,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2049929814205202405, guid: c1decba165ff68d4fa92af9ca4ecb3f1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b641140129ae434ab22dbe4f3703534, type: 2}
     - target: {fileID: 919132149155446097, guid: c1decba165ff68d4fa92af9ca4ecb3f1,
         type: 3}
       propertyPath: m_Name
@@ -781,6 +787,12 @@ Transform:
 --- !u!1 &906149536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1decba165ff68d4fa92af9ca4ecb3f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 645083818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &906149537 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: c1decba165ff68d4fa92af9ca4ecb3f1,
     type: 3}
   m_PrefabInstance: {fileID: 645083818}
   m_PrefabAsset: {fileID: 0}
@@ -1118,6 +1130,7 @@ MonoBehaviour:
   speed: 10
   IDPlayer: 0
   mesh: {fileID: 906149536}
+  animationPlayer: {fileID: 906149537}
 --- !u!136 &1774628732
 CapsuleCollider:
   m_ObjectHideFlags: 0

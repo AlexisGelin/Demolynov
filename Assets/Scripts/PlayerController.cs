@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 100f;
     public int IDPlayer;
     public GameObject mesh;
+    public Animator animationPlayer;
 
     void Update()
     {
@@ -17,27 +18,35 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Z))
             {
+                animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.forward * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.Q))
             {
+                animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, -90, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.S))
             {
+                animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.back * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.D))
             {
+                animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 90, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
             }
+            if(!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.Z))
+            {
+                animationPlayer.SetBool("walk", false);
+            }
             if (Input.GetKey(KeyCode.A))
             {
-
+                animationPlayer.SetTrigger("punch");
             }
             if (Input.GetKey(KeyCode.E))
             {
@@ -48,23 +57,35 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.O))
             {
+                animationPlayer.SetBool("walk", true);
+                mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.forward * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.K))
             {
+                animationPlayer.SetBool("walk", true);
+                mesh.transform.DORotate(new Vector3(0, -90, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.L))
             {
+                animationPlayer.SetBool("walk", true);
+                mesh.transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.back * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.M))
             {
+                animationPlayer.SetBool("walk", true);
+                mesh.transform.DORotate(new Vector3(0, 90, 0), 1f).SetEase(Ease.OutQuart);
                 rb.transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
+            }
+            if (!Input.GetKey(KeyCode.O) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.L) && !Input.GetKey(KeyCode.M))
+            {
+                animationPlayer.SetBool("walk", false);
             }
             if (Input.GetKey(KeyCode.I))
             {
-
+                animationPlayer.SetTrigger("punch");
             }
             if (Input.GetKey(KeyCode.P))
             {
