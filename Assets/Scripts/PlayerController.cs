@@ -11,6 +11,14 @@ public class PlayerController : MonoBehaviour
     public int IDPlayer;
     public GameObject mesh;
     public Animator animationPlayer;
+    public GameObject hand;
+    public GameObject weaponOnHand;
+
+
+    private void Start()
+    {
+
+    }
 
     void Update()
     {
@@ -101,4 +109,17 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("weapon"))
+        {
+            if (IDPlayer == 0 && Input.GetKey(KeyCode.E))
+            {
+                weaponOnHand = other.GetComponent<GameObject>();
+                weaponOnHand.transform.parent = hand.transform;
+            }
+        }
+    }
+
 }
