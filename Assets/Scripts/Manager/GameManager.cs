@@ -6,20 +6,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum GameState { MENU, GAME, PAUSE, END, WAIT }
+public enum GameState { MENU, GAME, END, WAIT }
 
 public class GameManager : MonoSingleton<GameManager>
 {
     public event Action<GameState> OnGameStateChanged;
 
+    public PlayerController Player1, Player2;
+
     GameState _gameState;
     public GameState GameState { get => _gameState; }
+
+    bool _isPauseActive;
 
     private void Awake()
     {
         Time.timeScale = 1;
 
+        ObjectPooler.Instance.Init();
+
         UIManager.Instance.Init();
+
+        MapManager.Instance.Init();
+
+        CameraManager.Instance.Init();
+
 
         ResetGame();
     }
@@ -29,6 +40,11 @@ public class GameManager : MonoSingleton<GameManager>
         if (Input.GetKeyDown(KeyCode.R))
         {
             ReloadScene();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameState == GameState.GAME) SwitchPause();
         }
     }
 
@@ -43,9 +59,6 @@ public class GameManager : MonoSingleton<GameManager>
                 break;
             case GameState.GAME:
                 HandleGame();
-                break;
-            case GameState.PAUSE:
-                HandlePause();
                 break;
             case GameState.END:
                 HandleEnd();
@@ -66,11 +79,33 @@ public class GameManager : MonoSingleton<GameManager>
 
     void HandleGame()
     {
+        PartyManager.Instance.Init();
+    }
 
+    public void SwitchPause()
+    {
+        if (_isPauseActive)
+        {
+            _isPauseActive = false;
+            HandlePause();
+            UIManager.Instance.HandleClosePause();
+        }
+        else
+        {
+            HandleExitPause();
+            _isPauseActive = true;
+            UIManager.Instance.HandleOpenPause();
+        }
     }
 
     void HandlePause()
     {
+        Time.timeScale = 0;
+    }
+
+    void HandleExitPause()
+    {
+        Time.timeScale = 1;
     }
 
     void HandleEnd()
@@ -84,7 +119,6 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void UpdateStateToMenu() => UpdateGameState(GameState.MENU);
     public void UpdateStateToGame() => UpdateGameState(GameState.GAME);
-    public void UpdateStateToPause() => UpdateGameState(GameState.PAUSE);
     public void UpdateStateToEnd() => UpdateGameState(GameState.END);
 
     public void ReloadScene()

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/ExpoProps.unity.meta
+guid: 92a8abdad72afdf498415c0dd951acc6
+========
 guid: b074f9fba6ec0ab4698e53324d5fd8bd
+>>>>>>>> develop:Assets/Scenes/PlayerInput.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
