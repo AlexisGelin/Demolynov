@@ -27,7 +27,6 @@ public class PropsController : MonoBehaviour
     public void takeDamage(GameObject player, int damage)
     {
         _hp = _hp - damage;
-        print(_hp);
         if (_hp <= 0)
         {
             this.gameObject.SetActive(false);
@@ -59,7 +58,6 @@ public class PropsController : MonoBehaviour
 
         if (other.CompareTag("hitPlayer2"))
         {
-            print("is hit");
             _source = player2;
             takeDamage(player2, other.gameObject.GetComponent<Weapon>().damage);
         }
