@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2839329893602810615}
   - component: {fileID: 37053779258322493}
   - component: {fileID: 2813594403042795254}
+  - component: {fileID: 2925842008302874038}
   m_Layer: 0
   m_Name: pillow
   m_TagString: Untagged
@@ -100,6 +101,20 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 0}
+--- !u!64 &2925842008302874038
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982525324833361896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4731840015933613875, guid: 6805703ae8dc9d54988aa5c491f00e83, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

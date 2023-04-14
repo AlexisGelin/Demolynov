@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 962110148546797769}
   - component: {fileID: 3080160178000024579}
   - component: {fileID: 4302933524327152709}
-  - component: {fileID: 3700433595091735150}
+  - component: {fileID: 6080164428103760767}
   m_Layer: 0
   m_Name: sideTable
   m_TagString: Untagged
@@ -102,7 +102,7 @@ MonoBehaviour:
   _score: 10
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
---- !u!64 &3700433595091735150
+--- !u!64 &6080164428103760767
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

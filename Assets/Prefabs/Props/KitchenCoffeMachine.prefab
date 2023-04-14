@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8120616297432632458}
   - component: {fileID: 6293444263030601792}
   - component: {fileID: 8851012186909911032}
+  - component: {fileID: 3226265232561096457}
   m_Layer: 0
   m_Name: kitchenCoffeeMachine
   m_TagString: Untagged
@@ -185,6 +186,20 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 0}
+--- !u!64 &3226265232561096457
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5500639274212989333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3538097580775983100, guid: 554344b997b53304b9a034f03edd02e9, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

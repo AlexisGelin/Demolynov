@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5488651388963061828}
   - component: {fileID: 7768546707960886414}
   - component: {fileID: 3204286818810948614}
+  - component: {fileID: 5493996860843887719}
   m_Layer: 0
   m_Name: laptop
   m_TagString: Untagged
@@ -102,6 +103,20 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 0}
+--- !u!64 &5493996860843887719
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8128874604948510043}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7203688626665590847, guid: c27944e3c09ed60458713c541fa18bce, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

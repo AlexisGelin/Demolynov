@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4423445619404015949}
   - component: {fileID: 1911719850678779271}
   - component: {fileID: 6663884555811886925}
+  - component: {fileID: 2431999128124895695}
   m_Layer: 0
   m_Name: bookcaseClosedWide
   m_TagString: Untagged
@@ -100,6 +101,20 @@ MonoBehaviour:
   _score: 50
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &2431999128124895695
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110117615970212946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5675887302420942096, guid: ce90f7134613970409b962be5bf56a0c, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

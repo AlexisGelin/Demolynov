@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4003832687423966580}
   - component: {fileID: 1185730744078580158}
   - component: {fileID: 435103797934157684}
+  - component: {fileID: 216485599929062061}
   m_Layer: 0
   m_Name: radio
   m_TagString: Untagged
@@ -102,6 +103,20 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &216485599929062061
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825411781785524331}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1850120232344490714, guid: 901dfbc4089bf8a4fab5bbb30b20a74d, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

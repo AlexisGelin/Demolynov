@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4151009297303522775}
   - component: {fileID: 2197668379849799965}
   - component: {fileID: 5563120634066537546}
+  - component: {fileID: 8585982187529343845}
   m_Layer: 0
   m_Name: pottedPlant
   m_TagString: Untagged
@@ -102,6 +103,20 @@ MonoBehaviour:
   _score: 10
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &8585982187529343845
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396127442326100168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3914873980704102052, guid: 3d7e15e7a695f134da680c2a2e76b715, type: 3}
 --- !u!1 &8479767466392799984
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,6 +128,7 @@ GameObject:
   - component: {fileID: 1236393195805684703}
   - component: {fileID: 2789284580114209915}
   - component: {fileID: 1410761066032069757}
+  - component: {fileID: 8474947970627955155}
   m_Layer: 0
   m_Name: plant
   m_TagString: Untagged
@@ -185,6 +201,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8474947970627955155
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479767466392799984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 46604309741045415, guid: 3d7e15e7a695f134da680c2a2e76b715, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

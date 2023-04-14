@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8600385740105322462}
   - component: {fileID: 5818160380941237012}
   - component: {fileID: 4178174414198952606}
-  - component: {fileID: 6720508049327430683}
+  - component: {fileID: 1358565644325733499}
   m_Layer: 0
   m_Name: bookcaseOpen
   m_TagString: Untagged
@@ -101,7 +101,7 @@ MonoBehaviour:
   _score: 50
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
---- !u!64 &6720508049327430683
+--- !u!64 &1358565644325733499
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
