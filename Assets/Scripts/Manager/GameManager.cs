@@ -25,6 +25,8 @@ public class GameManager : MonoSingleton<GameManager>
 
         MapManager.Instance.Init();
 
+        CameraManager.Instance.Init();
+
         ResetGame();
     }
 
