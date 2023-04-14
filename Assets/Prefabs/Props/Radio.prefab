@@ -103,8 +103,7 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
-  player1: {fileID: 2580355762623719075, guid: 6c3e94a5943358341887967f5e36d3ad, type: 3}
-  player2: {fileID: 2580355762623719075, guid: 307f6d1afe409b74694e50155479ddba, type: 3}
+  LastPlayerController: {fileID: 0}
 --- !u!64 &216485599929062061
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -203,6 +202,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d92f71d5f9e6d1a4781033ac55516cb8, type: 3}
+--- !u!1 &3023263667201396504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7167246760596602863, guid: d92f71d5f9e6d1a4781033ac55516cb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 5369388884189753591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &-389184662667522271
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3023263667201396504}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &3156895146787939601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7011099481881744870, guid: d92f71d5f9e6d1a4781033ac55516cb8,
