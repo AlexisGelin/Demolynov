@@ -93,6 +93,11 @@ MonoBehaviour:
   weaponOnFloorCol: {fileID: 0}
   armL: {fileID: 1117369100245988764}
   armR: {fileID: 946362114779096510}
+  weaponTrail: {fileID: 0}
+  forwardMovement: 0
+  backwardMovement: 0
+  leftMovement: 0
+  rightMovement: 0
 --- !u!54 &2580355762623719079
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,7 +141,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4787475189419715544}
-  m_LocalRotation: {x: 0.33725315, y: 0.00000001484359, z: -0.0000000053175824, w: 0.941414}
+  m_LocalRotation: {x: 0.33725315, y: 0.00000001484359, z: -0.000000005317584, w: 0.941414}
   m_LocalPosition: {x: -0.67000043, y: 12.429062, z: -17.251045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -287,7 +292,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7249541235600053446}
-  m_LocalRotation: {x: -0, y: 0.000000015751437, z: -0.000000012947228, w: 1}
+  m_LocalRotation: {x: -0.000000029802322, y: -0.000000020869354, z: 0.000000017154006,
+    w: 1}
   m_LocalPosition: {x: 0.6699999, y: 3.9369364, z: 4.7896285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
