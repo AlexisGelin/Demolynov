@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using TMPro;
 using UnityEngine;
@@ -7,6 +8,8 @@ using Random = UnityEngine.Random;
 public class Score : MonoBehaviour
 {
     private int score { get; set; }
+    public Combo Combo { get => combo;  }
+
     private int series;
 
     // ---- code de test -----
@@ -36,6 +39,7 @@ public class Score : MonoBehaviour
 
         textScore.text = "Score : " + GetScore();
         textMult.text = "Multiplicator : " + combo.GetCombo();
+
         textCombo.text = "Combo : " + series;
         slider.minValue = 0;
         slider.maxValue = delayBeforeResetCombo;
@@ -46,6 +50,10 @@ public class Score : MonoBehaviour
     {
         remainingTime = 0;
         series += 1;
+
+        DOTween.Kill(textMult.GetComponent<RectTransform>());
+        textCombo.GetComponent<RectTransform>().localScale = Vector3.one;
+        textCombo.GetComponent<RectTransform>().DOPunchScale(new Vector3(.2f, .2f, .2f), .1f);
 
         if (series % 5 == 0)
         {

@@ -23,11 +23,14 @@ public class GameManager : MonoSingleton<GameManager>
     {
         Time.timeScale = 1;
 
+        ObjectPooler.Instance.Init();
+
         UIManager.Instance.Init();
 
         MapManager.Instance.Init();
 
         CameraManager.Instance.Init();
+
 
         ResetGame();
     }

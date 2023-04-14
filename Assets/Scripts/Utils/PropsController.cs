@@ -15,9 +15,19 @@ public class PropsController : MonoBehaviour
     public void takeDamage(GameObject player, int damage)
     {
         _hp = _hp - damage;
+
+        var _floatingTextGO = ObjectPooler.Instance.SpawnFromPool("FloatingText", transform.position + new Vector3(0, 0, -0.1f), Quaternion.identity);
+        var _floatingText = _floatingTextGO.GetComponent<FloatingText>();
+
+        _floatingText.InitSmall(_score, _source.GetComponent<Score>().Combo.GetCombo());
+
+
         if (_hp <= 0)
         {
-            _source.GetComponent<Score>().AddScore(20);
+            _source.GetComponent<Score>().AddScore(_score);
+
+            ObjectPooler.Instance.SpawnFromPool("Debris", new Vector3(transform.position.x - 6f,0, transform.position.z + 11.5f),Quaternion.identity);
+
             this.gameObject.SetActive(false);
             _ps.Play();
 
@@ -30,13 +40,6 @@ public class PropsController : MonoBehaviour
         }
     }
 
-    /*    private void OnCollisionEnter(Collision collision,int damage)
-        {
-            if (collision.gameObject.tag.Equals("Weapon"))
-            {
-                takeDamage(collision.body.gameObject,damage);
-            }
-        }*/
 
     private void OnTriggerEnter(Collider other)
     {
