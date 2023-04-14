@@ -16,12 +16,10 @@ public class PlayerController : MonoBehaviour
     public GameObject weaponOnHand;
     public GameObject weaponOnFloor;
     public Weapon weapon;
-    public GameObject hitArea;
 
 
     private void Start()
     {
-        hitArea.SetActive(false);
     }
 
     void Update()
@@ -58,9 +56,7 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
-                hitArea.SetActive(true);
                 animationPlayer.SetBool("punch", true);
-                hitArea.SetActive(false);
             }
             if (Input.GetKeyUp(KeyCode.A))
             {
@@ -78,9 +74,11 @@ public class PlayerController : MonoBehaviour
                     weapon = weaponOnFloor.gameObject.GetComponent<Weapon>();
                     if (weaponOnHand != null)
                     {
+                        weaponOnHand.tag = "weapon";
                         weaponOnHand.transform.parent = null;
                     }
                     weaponOnHand = weaponOnFloor.gameObject;
+                    weaponOnHand.tag = "hitPlayer1";
                 }
             }
         }

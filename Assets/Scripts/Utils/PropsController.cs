@@ -9,6 +9,7 @@ public class PropsController : MonoBehaviour
     [SerializeField] int _score;
     [SerializeField] GameObject _source;
     [SerializeField] ParticleSystem _ps;
+    public GameObject player1, player2;
 
 
     // Start is called before the first frame update
@@ -47,6 +48,15 @@ public class PropsController : MonoBehaviour
         if (collision.gameObject.tag.Equals("Weapon"))
         {
             takeDamage(collision.body.gameObject,damage);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("hitPlayer1"))
+        {
+            takeDamage(player1, other.gameObject.GetComponent<Weapon>().damage);
+            
         }
     }
 }
