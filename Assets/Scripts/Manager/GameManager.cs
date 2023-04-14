@@ -23,6 +23,8 @@ public class GameManager : MonoSingleton<GameManager>
 
         UIManager.Instance.Init();
 
+        MapManager.Instance.Init();
+
         ResetGame();
     }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    public Transform _transformSpawn, _nextTransformSpawn;
-
+    public bool _isNextRoomLeft;
 
 }

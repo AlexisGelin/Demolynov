@@ -2878,10 +2878,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4447531858417850308, guid: f5ef066a2ef11964d8a5e1f7fbd09cf7,
+        type: 3}
+      propertyPath: _isNextRoomLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447531858417850308, guid: f5ef066a2ef11964d8a5e1f7fbd09cf7,
+        type: 3}
+      propertyPath: _transformSpawn
+      value: 
+      objectReference: {fileID: 8042141600333486793}
+    - target: {fileID: 4447531858417850308, guid: f5ef066a2ef11964d8a5e1f7fbd09cf7,
+        type: 3}
+      propertyPath: _nextTransformSpawn
+      value: 
+      objectReference: {fileID: 9184251096548865343}
     - target: {fileID: 4647484568959838852, guid: f5ef066a2ef11964d8a5e1f7fbd09cf7,
         type: 3}
       propertyPath: m_Name
-      value: RoomOffice 1X1
+      value: RoomOffice 1X1 Right
       objectReference: {fileID: 0}
     - target: {fileID: 4647484568959838855, guid: f5ef066a2ef11964d8a5e1f7fbd09cf7,
         type: 3}
@@ -2964,6 +2979,18 @@ Transform:
 --- !u!4 &7606920520394014731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4426912613626018333, guid: f5ef066a2ef11964d8a5e1f7fbd09cf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6124535376429775382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8042141600333486793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4280061581652140255, guid: f5ef066a2ef11964d8a5e1f7fbd09cf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6124535376429775382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9184251096548865343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3137808065536036649, guid: f5ef066a2ef11964d8a5e1f7fbd09cf7,
     type: 3}
   m_PrefabInstance: {fileID: 6124535376429775382}
   m_PrefabAsset: {fileID: 0}
