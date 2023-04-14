@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 animationPlayer.SetBool("walk", false);
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.C))
             {
                 if (!weaponOnHand)
                 {
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
                 }
                 animationPlayer.SetBool("punch", true);
             }
-            if (Input.GetKeyUp(KeyCode.A))
+            if (Input.GetKeyUp(KeyCode.C))
             {
                 if (!weaponOnHand)
                 {
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
                 }
                 animationPlayer.SetBool("punch", false);
             }
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.V))
             {
                 if (weaponOnHand != weaponOnFloor)
                 {
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
         }
         if (IDPlayer == 1)
         {
-            if (Input.GetKey(KeyCode.O))
+            if (Input.GetKey(KeyCode.I))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
@@ -163,48 +163,48 @@ public class PlayerController : MonoBehaviour
 
 
             // Release
-            if (Input.GetKeyUp(KeyCode.O))
+            if (Input.GetKeyUp(KeyCode.I))
             {
                 forwardMovement = 0;
             }
-            if (Input.GetKeyUp(KeyCode.K))
+            if (Input.GetKeyUp(KeyCode.J))
             {
                 leftMovement = 0;
             }
-            if (Input.GetKeyUp(KeyCode.L))
+            if (Input.GetKeyUp(KeyCode.K))
             {
                 backwardMovement = 0;
             }
-            if (Input.GetKeyUp(KeyCode.M))
+            if (Input.GetKeyUp(KeyCode.L))
             {
                 rightMovement = 0;
             }
 
 
 
-            if (Input.GetKey(KeyCode.K))
+            if (Input.GetKey(KeyCode.J))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, -90, 0), 1f).SetEase(Ease.OutQuart);
                 leftMovement = 1;
             }
-            if (Input.GetKey(KeyCode.L))
+            if (Input.GetKey(KeyCode.K))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.OutQuart);
                 backwardMovement = 1;
             }
-            if (Input.GetKey(KeyCode.M))
+            if (Input.GetKey(KeyCode.L))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 90, 0), 1f).SetEase(Ease.OutQuart);
                 rightMovement = 1;
             }
-            if (!Input.GetKey(KeyCode.O) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.L) && !Input.GetKey(KeyCode.M))
+            if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.J) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.L))
             {
                 animationPlayer.SetBool("walk", false);
             }
-            if (Input.GetKey(KeyCode.I))
+            if (Input.GetKey(KeyCode.M))
             {
                 if (!weaponOnHand)
                 {
@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
                 }
                 animationPlayer.SetBool("punch", true);
             }
-            if (Input.GetKeyUp(KeyCode.I))
+            if (Input.GetKeyUp(KeyCode.M))
             {
                 if (!weaponOnHand)
                 {
@@ -281,16 +281,5 @@ public class PlayerController : MonoBehaviour
             weaponOnFloor = null;
             weaponOnFloorCol = null;
         }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        /*if(other.CompareTag("weapon"))
-        {
-            if (IDPlayer == 0 && Input.GetKeyDown(KeyCode.E))
-            {
-                
-            }
-        }*/
     }
 }

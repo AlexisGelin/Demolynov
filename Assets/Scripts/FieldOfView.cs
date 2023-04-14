@@ -42,7 +42,7 @@ public class FieldOfView : MonoBehaviour
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
-        Debug.Log("Check");
+        //Debug.Log("Check");
 
         if (rangeChecks.Length != 0)
         {

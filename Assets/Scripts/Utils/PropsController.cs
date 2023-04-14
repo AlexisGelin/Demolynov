@@ -77,7 +77,7 @@ public class PropsController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.CompareTag("hitPlayer1e"))
         {
             _source = GameManager.Instance.Player1.gameObject;
