@@ -23,6 +23,8 @@ public class GameManager : MonoSingleton<GameManager>
 
         UIManager.Instance.Init();
 
+        MapManager.Instance.Init();
+
         ResetGame();
     }
 
@@ -70,7 +72,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     void HandleGame()
     {
-
+        PartyManager.Instance.Init();
     }
 
     public void SwitchPause()

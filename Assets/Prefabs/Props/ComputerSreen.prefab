@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8071021743193072529}
   - component: {fileID: 6334014678522058587}
   - component: {fileID: 3182563640916354204}
+  - component: {fileID: 6116304170348296658}
   m_Layer: 0
   m_Name: computerScreen
   m_TagString: Untagged
@@ -101,6 +102,20 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &6116304170348296658
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541130387579041422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2515366814566747809, guid: a93ff2838d39a36438a5773203c9cdc4, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

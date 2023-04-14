@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7407610942140027411}
   - component: {fileID: 4695541021966952153}
   - component: {fileID: 5536472202032208024}
+  - component: {fileID: 3717341702826810231}
   m_Layer: 0
   m_Name: plantSmall1
   m_TagString: Untagged
@@ -101,6 +102,20 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 0}
+--- !u!64 &3717341702826810231
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496747981829752588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1600055076803984969, guid: 258b4cf8ec4e92b4aad231b31245ce93, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

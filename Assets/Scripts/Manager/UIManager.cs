@@ -83,8 +83,7 @@ public class UIManager : MonoSingleton<UIManager>
     }
     void HandleGame()
     {
-        ClosePanel(_pausePanel);
-        ChangePanel(_gamePanel, true);
+        ChangePanel(_gamePanel);
     }
     void HandleEnd()
     {
