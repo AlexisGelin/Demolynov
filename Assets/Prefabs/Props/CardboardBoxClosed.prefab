@@ -102,7 +102,6 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 61008484636788161}
-  LastPlayerController: {fileID: 0}
 --- !u!64 &1248863627916761576
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -114,7 +113,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8288992752737330564, guid: 2794416ac56a61542bbe74f57a1ee711, type: 3}
 --- !u!1001 &3234720008409923303
