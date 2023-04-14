@@ -7,7 +7,7 @@ using UnityEngine.Animations;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
-    public float speed = 100f;
+    public float speed = 50f;
     public int IDPlayer;
     public GameObject mesh;
 
