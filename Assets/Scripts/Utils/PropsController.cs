@@ -22,13 +22,13 @@ public class PropsController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            takeDamage(_source);
+            takeDamage(_source,1);
         }
     }
 
-    public void takeDamage(GameObject player)
+    public void takeDamage(GameObject player, int damage)
     {
-        _hp = _hp - 1;
+        _hp = _hp - damage;
         if (_hp <= 0)
         {
             this.gameObject.SetActive(false);
@@ -42,11 +42,11 @@ public class PropsController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision,int damage)
     {
         if (collision.gameObject.tag.Equals("Weapon"))
         {
-            takeDamage(collision.body.gameObject);
+            takeDamage(collision.body.gameObject,damage);
         }
     }
 }
