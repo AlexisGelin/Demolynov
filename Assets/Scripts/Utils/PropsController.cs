@@ -21,15 +21,13 @@ public class PropsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            takeDamage(_source,1);
-        }
+        
     }
 
     public void takeDamage(GameObject player, int damage)
     {
         _hp = _hp - damage;
+        print(_hp);
         if (_hp <= 0)
         {
             this.gameObject.SetActive(false);
@@ -55,7 +53,15 @@ public class PropsController : MonoBehaviour
     {
         if (other.CompareTag("hitPlayer1"))
         {
+            _source = player1;
             takeDamage(player1, other.gameObject.GetComponent<Weapon>().damage);
+        }
+
+        if (other.CompareTag("hitPlayer2"))
+        {
+            print("is hit");
+            _source = player2;
+            takeDamage(player2, other.gameObject.GetComponent<Weapon>().damage);
         }
     }
 }

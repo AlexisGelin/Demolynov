@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public GameObject weaponOnHand;
     public GameObject weaponOnFloor;
     public Weapon weapon;
+    public Collider weaponCol;
+    public Collider weaponOnFloorCol;
 
 
     private void Start()
@@ -56,16 +58,20 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
+                weaponCol.enabled = true;
                 animationPlayer.SetBool("punch", true);
             }
             if (Input.GetKeyUp(KeyCode.A))
             {
                 animationPlayer.SetBool("punch", false);
+                weaponCol.enabled = false;
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (weaponOnHand != weaponOnFloor)
                 {
+                    weaponCol = weaponOnFloorCol;
+                    weaponCol.enabled = false;
                     weaponOnFloor.transform.rotation = new Quaternion(0, 0, 0, 0);
                     animationPlayer.SetBool("haveWeapon", true);
                     weaponOnFloor.gameObject.transform.parent = hand.transform;
@@ -74,10 +80,12 @@ public class PlayerController : MonoBehaviour
                     weapon = weaponOnFloor.gameObject.GetComponent<Weapon>();
                     if (weaponOnHand != null)
                     {
+                        weaponCol = null;
                         weaponOnHand.tag = "weapon";
                         weaponOnHand.transform.parent = null;
                     }
                     weaponOnHand = weaponOnFloor.gameObject;
+                    
                     weaponOnHand.tag = "hitPlayer1";
                 }
             }
@@ -114,16 +122,20 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.I))
             {
+                weaponCol.enabled = true;
                 animationPlayer.SetBool("punch", true);
             }
             if (Input.GetKeyUp(KeyCode.I))
             {
                 animationPlayer.SetBool("punch", false);
+                weaponCol.enabled = false;
             }
             if (Input.GetKeyDown(KeyCode.P))
             {
                 if (weaponOnHand != weaponOnFloor)
                 {
+                    weaponCol = weaponOnFloorCol;
+                    weaponCol.enabled = false;
                     weaponOnFloor.transform.rotation = new Quaternion(0, 0, 0, 0);
                     animationPlayer.SetBool("haveWeapon", true);
                     weaponOnFloor.gameObject.transform.parent = hand.transform;
@@ -131,9 +143,12 @@ public class PlayerController : MonoBehaviour
                     weaponOnFloor.gameObject.transform.DOLocalRotate(new Vector3(0, 90, 180), 0.1f);
                     if (weaponOnHand != null)
                     {
+                        weaponCol = null;
+                        weaponOnHand.tag = "weapon";
                         weaponOnHand.transform.parent = null;
                     }
                     weaponOnHand = weaponOnFloor.gameObject;
+                    weaponOnHand.tag = "hitPlayer2";
                 }
             }
         }
@@ -144,6 +159,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("weapon"))
         {
             weaponOnFloor = other.gameObject;
+            weaponOnFloorCol = other;
         }
     }
 
@@ -152,6 +168,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("weapon"))
         {
             weaponOnFloor = null;
+            weaponOnFloorCol = null;
         }
     }
 
