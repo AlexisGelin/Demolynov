@@ -19239,7 +19239,7 @@ GameObject:
   - component: {fileID: 9152662438071408593}
   m_Layer: 0
   m_Name: FreezePowerUp
-  m_TagString: Untagged
+  m_TagString: FreezeTime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
