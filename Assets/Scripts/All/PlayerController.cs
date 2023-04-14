@@ -19,7 +19,15 @@ public class PlayerController : MonoBehaviour
     public Weapon weapon;
     public Collider weaponCol;
     public Collider weaponOnFloorCol;
+    public Collider armL;
+    public Collider armR;
+    public TrailRenderer weaponTrail;
 
+    private void Start()
+    {
+        armL.enabled = false;
+        armR.enabled = false;
+    }
 
     void Update()
     {
@@ -29,25 +37,25 @@ public class PlayerController : MonoBehaviour
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.forward * speed * Time.deltaTime;
+                rb.transform.position = transform.position + (Vector3.forward).normalized * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.Q))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, -90, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
+                rb.transform.position = transform.position + (Vector3.left).normalized * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.S))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.back * speed * Time.deltaTime;
+                rb.transform.position = transform.position + (Vector3.back).normalized * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.D))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 90, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
+                rb.transform.position = transform.position + (Vector3.right).normalized * speed * Time.deltaTime;
             }
             if(!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.Z))
             {
@@ -55,18 +63,40 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
-                weaponCol.enabled = true;
+                if (!weaponOnHand)
+                {
+                    armL.enabled= true;
+                    armR.enabled = true;
+                }
+                else
+                {
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = true;
+                    weaponCol.enabled = true;
+                }
                 animationPlayer.SetBool("punch", true);
             }
             if (Input.GetKeyUp(KeyCode.A))
             {
+                if (!weaponOnHand)
+                {
+                    armL.enabled = false;
+                    armR.enabled = false;
+                }
+                else
+                {
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = false;
+                    weaponCol.enabled = false;
+                }
                 animationPlayer.SetBool("punch", false);
-                weaponCol.enabled = false;
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (weaponOnHand != weaponOnFloor)
                 {
+                    if (weaponCol != null)
+                    {
+                        weaponCol.enabled = true;
+                    }
                     weaponCol = weaponOnFloorCol;
                     weaponCol.enabled = false;
                     weaponOnFloor.transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -77,12 +107,12 @@ public class PlayerController : MonoBehaviour
                     weapon = weaponOnFloor.gameObject.GetComponent<Weapon>();
                     if (weaponOnHand != null)
                     {
-                        weaponCol = null;
                         weaponOnHand.tag = "weapon";
                         weaponOnHand.transform.parent = null;
                     }
                     weaponOnHand = weaponOnFloor.gameObject;
-                    
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = false;
+                  
                     weaponOnHand.tag = "hitPlayer1";
                 }
             }
@@ -119,18 +149,40 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.I))
             {
-                weaponCol.enabled = true;
+                if (!weaponOnHand)
+                {
+                    armL.enabled = true;
+                    armR.enabled = true;
+                }
+                else
+                {
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = true;
+                    weaponCol.enabled = true;
+                }
                 animationPlayer.SetBool("punch", true);
             }
             if (Input.GetKeyUp(KeyCode.I))
             {
+                if (!weaponOnHand)
+                {
+                    armL.enabled = false;
+                    armR.enabled = false;
+                }
+                else
+                {
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = false;
+                    weaponCol.enabled = false;
+                }
                 animationPlayer.SetBool("punch", false);
-                weaponCol.enabled = false;
             }
             if (Input.GetKeyDown(KeyCode.P))
             {
                 if (weaponOnHand != weaponOnFloor)
                 {
+                    if (weaponCol != null)
+                    {
+                        weaponCol.enabled = true;
+                    }
                     weaponCol = weaponOnFloorCol;
                     weaponCol.enabled = false;
                     weaponOnFloor.transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -138,13 +190,15 @@ public class PlayerController : MonoBehaviour
                     weaponOnFloor.gameObject.transform.parent = hand.transform;
                     weaponOnFloor.gameObject.transform.localPosition = new Vector3(0.00111f, 0.00117f, -0.00092f);
                     weaponOnFloor.gameObject.transform.DOLocalRotate(new Vector3(0, 90, 180), 0.1f);
+                    weapon = weaponOnFloor.gameObject.GetComponent<Weapon>();
                     if (weaponOnHand != null)
                     {
-                        weaponCol = null;
                         weaponOnHand.tag = "weapon";
                         weaponOnHand.transform.parent = null;
                     }
                     weaponOnHand = weaponOnFloor.gameObject;
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = false;
+
                     weaponOnHand.tag = "hitPlayer2";
                 }
             }
