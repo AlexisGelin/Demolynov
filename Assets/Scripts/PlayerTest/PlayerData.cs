@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-   [NonSerialized] public float speed;
+   [HideInInspector] public float speed;
     private bool isSpeedBoosted;
     private float remainingTimeSpeedBoost;
     [SerializeField] private float originSpeed;
@@ -48,17 +48,17 @@ public class PlayerData : MonoBehaviour
 
         if (isForceBoosted)
         {
-            remainingTimeForceBoost += 0.1f;
+            remainingTimeForceBoost += 1 * Time.deltaTime;
         }
 
         if (isFreezeTime)
         {
-            remainingTimeFreeze += 0.1f;
+            remainingTimeFreeze += 1*Time.deltaTime;
         }
 
         if (isSpeedBoosted)
         {
-            remainingTimeSpeedBoost += 0.1f;
+            remainingTimeSpeedBoost += 1 * Time.deltaTime;
         }
     }
 

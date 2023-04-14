@@ -15,14 +15,11 @@ public class PlayerController : MonoBehaviour
     public GameObject hand;
     public GameObject weaponOnHand;
     public GameObject weaponOnFloor;
+    public PlayerData _playerData;
     public Weapon weapon;
     public Collider weaponCol;
     public Collider weaponOnFloorCol;
 
-
-    private void Start()
-    {
-    }
 
     void Update()
     {

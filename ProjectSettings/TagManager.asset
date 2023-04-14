@@ -9,6 +9,10 @@ TagManager:
   - FreezeTime
   - SpeedBoost
   - ForceBoost
+  - Undefined
+  - weapon
+  - hitPlayer2
+  - hitPlayer1
   layers:
   - Default
   - TransparentFX
