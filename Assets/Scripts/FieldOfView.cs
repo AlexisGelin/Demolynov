@@ -42,7 +42,7 @@ public class FieldOfView : MonoBehaviour
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
-
+        Debug.Log("Check");
 
         if (rangeChecks.Length != 0)
         {
@@ -60,7 +60,7 @@ public class FieldOfView : MonoBehaviour
                     if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     {
                         canSeePlayer = true;
-                        c.gameObject.GetComponent<PlayerController>().speed = 7f;
+                        c.gameObject.transform.parent.gameObject.GetComponent<PlayerData>().speed = 5f;
                     }
                     else
                     {
@@ -77,7 +77,7 @@ public class FieldOfView : MonoBehaviour
                 {
                     canSeePlayer = false;
                     RemovePlayerFromList(c.gameObject);
-                    c.gameObject.GetComponent<PlayerController>().speed = 10f;
+                    c.gameObject.transform.parent.gameObject.GetComponent<PlayerData>().speed = 10f;
                     RemoveTargetFromList(c.transform);
                 }
                 
