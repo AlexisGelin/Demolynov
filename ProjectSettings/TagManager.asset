@@ -6,6 +6,9 @@ TagManager:
   tags:
   - FxTemporaire
   - Explosion
+  - FreezeTime
+  - SpeedBoost
+  - ForceBoost
   layers:
   - Default
   - TransparentFX
