@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
 
 
+
     private void Start()
     {
         armL.enabled = false;
@@ -38,25 +39,25 @@ public class PlayerController : MonoBehaviour
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.forward * speed * Time.deltaTime;
+                rb.transform.position = transform.position + (Vector3.forward).normalized * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.Q))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, -90, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
+                rb.transform.position = transform.position + (Vector3.left).normalized * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.S))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.back * speed * Time.deltaTime;
+                rb.transform.position = transform.position + (Vector3.back).normalized * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.D))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 90, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
+                rb.transform.position = transform.position + (Vector3.right).normalized * speed * Time.deltaTime;
             }
             if(!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.Z))
             {
