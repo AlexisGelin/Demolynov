@@ -17,6 +17,9 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private float originForce;
     [SerializeField] private GameObject freezeEffectImage; //canva avec une image
     [SerializeField] private GamePanel panel;
+    [SerializeField] private ParticleSystem forceParticles;
+    [SerializeField] private ParticleSystem speedParticles;
+
     [Range(0, 10)] [SerializeField] private float durationOfSpeedBoost;
     [Range(0, 10)] [SerializeField] private float durationOfForceBoost;
     [Range(0, 10)] [SerializeField] private float durationOfTimeFreeze;
@@ -33,12 +36,14 @@ public class PlayerData : MonoBehaviour
         if (durationOfForceBoost <= remainingTimeForceBoost)
         {
             isForceBoosted = false;
+            forceParticles.Stop();
             RemoveForceBoost();
         }
 
         if (durationOfSpeedBoost <= remainingTimeSpeedBoost)
         {
             isSpeedBoosted = false;
+            speedParticles.Stop();
             RemoveSpeedBoost();
         }
 
@@ -46,7 +51,6 @@ public class PlayerData : MonoBehaviour
         {
             isFreezeTime = false;
             freezeEffectImage.SetActive(false);
-
             panel.PowerUpFreezeCoeff = 1;
         }
 
@@ -109,6 +113,7 @@ public class PlayerData : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("SpeedBoost"))
         {
+            speedParticles.Play();
             AddSpeedBoost(2);
             isSpeedBoosted = true;
             Destroy(collision.gameObject);
@@ -116,6 +121,7 @@ public class PlayerData : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("ForceBoost"))
         {
+            forceParticles.Play();
             AddForceBoost(2);
             isForceBoosted = true;
             Destroy(collision.gameObject);
