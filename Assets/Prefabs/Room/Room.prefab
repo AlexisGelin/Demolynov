@@ -842,6 +842,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wallDoorway
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d2cfa72dc6e3fe84e9e923f219133240,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cfa72dc6e3fe84e9e923f219133240, type: 3}
 --- !u!1 &2360004278041564563 stripped
@@ -1144,6 +1149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wallDoorway (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d2cfa72dc6e3fe84e9e923f219133240,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cfa72dc6e3fe84e9e923f219133240, type: 3}
@@ -1650,6 +1660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wallDoorway (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d2cfa72dc6e3fe84e9e923f219133240,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cfa72dc6e3fe84e9e923f219133240, type: 3}
 --- !u!4 &6166748590621046592 stripped
@@ -2154,6 +2169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wallDoorway (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d2cfa72dc6e3fe84e9e923f219133240,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cfa72dc6e3fe84e9e923f219133240, type: 3}
