@@ -89,6 +89,8 @@ MonoBehaviour:
   weaponOnHand: {fileID: 0}
   weaponOnFloor: {fileID: 0}
   weapon: {fileID: 0}
+  weaponCol: {fileID: 0}
+  weaponOnFloorCol: {fileID: 0}
 --- !u!54 &2580355762623719079
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -103,8 +105,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 1
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &4787475189419715544
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +134,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4787475189419715544}
-  m_LocalRotation: {x: 0.33725312, y: 0.000000054521223, z: -0.000000019531738, w: 0.941414}
-  m_LocalPosition: {x: -0.00000047683716, y: 12.429062, z: -11.051044}
+  m_LocalRotation: {x: 0.33725315, y: 0.00000001484359, z: -0.0000000053175846, w: 0.941414}
+  m_LocalPosition: {x: -0.67000043, y: 12.429062, z: -17.251045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -283,8 +285,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7249541235600053446}
-  m_LocalRotation: {x: -0, y: 0.0000000095364, z: -0.0000000078386435, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.00000002184131, z: 0.000000017952928, w: 1}
+  m_LocalPosition: {x: 0.6699999, y: 3.9369364, z: 4.7896285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -505,7 +507,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2994335321872322776}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &645426393
+--- !u!136 &8475548930400797758
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -515,10 +517,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.65321577
-  m_Height: 4.405877
+  m_Radius: 0.5
+  m_Height: 4.3
   m_Direction: 1
-  m_Center: {x: 0.0070142746, y: 1.6464772, z: 0.03731811}
+  m_Center: {x: 0, y: 1.593539, z: 0}
 --- !u!1 &2903138287948001130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 127227756711985074, guid: c1decba165ff68d4fa92af9ca4ecb3f1,
@@ -531,68 +533,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2994335321872322776}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3683778148518700017 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7308941246413180119, guid: c1decba165ff68d4fa92af9ca4ecb3f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2994335321872322776}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1174279839
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3683778148518700017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: -1
-  m_Mesh: {fileID: 0}
---- !u!23 &1174279840
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3683778148518700017}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &8711247788859092297 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: c1decba165ff68d4fa92af9ca4ecb3f1,
