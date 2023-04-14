@@ -20,14 +20,14 @@ public abstract class Panel : MonoBehaviour
         _canvasGroup.DOFade(1, .2f).OnComplete(() =>
         {
             _canvasGroup.blocksRaycasts = true;
+            _canvasGroup.interactable = true;
         }).SetUpdate(UpdateType.Normal, true);
-
-
     }
 
     public virtual void ClosePanel()
     {
         _canvasGroup.blocksRaycasts = false;
+        _canvasGroup.interactable = false;
         _canvasGroup.DOFade(0, .2f).SetUpdate(UpdateType.Normal, true);
     }
 

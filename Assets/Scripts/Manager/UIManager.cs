@@ -65,9 +65,6 @@ public class UIManager : MonoSingleton<UIManager>
             case GameState.GAME:
                 HandleGame();
                 break;
-            case GameState.PAUSE:
-                HandlePause();
-                break;
             case GameState.END:
                 HandleEnd();
                 break;
@@ -89,10 +86,6 @@ public class UIManager : MonoSingleton<UIManager>
         ClosePanel(_pausePanel);
         ChangePanel(_gamePanel, true);
     }
-    void HandlePause()
-    {
-        ChangePanel(_pausePanel, true);
-    }
     void HandleEnd()
     {
         ChangePanel(_endGamePanel);
@@ -106,6 +99,20 @@ public class UIManager : MonoSingleton<UIManager>
         ChangePanel(_settingPanel, true);
     }
 
+    public void HandleCloseSettings()
+    {
+        ChangePanel(_menuPanel);
+    }
+
+    public void HandleOpenPause()
+    {
+        ChangePanel(_pausePanel, true);
+    }
+
+    public void HandleClosePause()
+    {
+        ChangePanel(_gamePanel);
+    }
 
     #endregion
 
