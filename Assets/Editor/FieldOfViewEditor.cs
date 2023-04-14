@@ -19,8 +19,12 @@ public class FieldOfViewEditor : Editor
 
         if (fov.canSeePlayer)
         {
-            Handles.color = Color.green;
-            Handles.DrawLine(fov.transform.position, fov.playerRef.transform.position);
+            foreach(var player in fov.players)
+            {
+                Handles.color = Color.green;
+                Handles.DrawLine(fov.transform.position, player.transform.position);
+            }
+            
         }
     }
 

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
@@ -8,22 +10,25 @@ public class FieldOfView : MonoBehaviour
     [Range(0,360)]
     public float angle;
 
-    public GameObject playerRef;
+    public List<Transform> targets = new();
+    public List<GameObject> players = new();
 
     public LayerMask targetMask;
     public LayerMask obstructionMask;
+    
+
 
     public bool canSeePlayer;
 
     private void Start()
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
+
     }
 
     private IEnumerator FOVRoutine()
     {
-        float delay = 0.2f;
+        float delay = 0.05f;
         WaitForSeconds wait = new WaitForSeconds(delay);
 
         while (true)
@@ -38,35 +43,88 @@ public class FieldOfView : MonoBehaviour
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
 
-        
-        if(rangeChecks.Length != 0 )
+
+        if (rangeChecks.Length != 0)
         {
-            Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
-
-            if(Vector3.Angle(transform.forward, directionToTarget) < angle / 2 )
+            foreach(Collider c in rangeChecks)
             {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                AddPlayerToList(c.gameObject);
+                AddTargetToList(c.transform);
 
-                if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                Vector3 directionToTarget = (c.transform.position - transform.position).normalized;
+                float distanceToTarget = Vector3.Distance(transform.position, c.transform.position);
+
+                if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
                 {
-                    canSeePlayer = true;
-                    
+
+                    if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                    {
+                        canSeePlayer = true;
+                        c.gameObject.GetComponent<PlayerController>().speed = 7f;
+                    }
+                    else
+                    {
+                        canSeePlayer = false;
+                    }
                 }
-                else
+                else 
                 {
                     canSeePlayer = false;
+
+                }
+
+                if (distanceToTarget > radius)
+                {
+                    canSeePlayer = false;
+                    RemovePlayerFromList(c.gameObject);
+                    c.gameObject.GetComponent<PlayerController>().speed = 10f;
+                    RemoveTargetFromList(c.transform);
                 }
                 
             }
-            else
-            {
-                canSeePlayer = false;
-            }
+            
         }
-        else if (canSeePlayer)
+        else if(canSeePlayer){ canSeePlayer = false; }
+        else{ players.Clear(); targets.Clear();}
+    }
+
+    /*private void OnTriggerExit(Collider player)
+    {
+        player.GetComponent<PlayerController>().speed = 10f;
+        RemovePlayerFromList(player.gameObject);
+        RemoveTargetFromList(player.transform);
+    }*/
+
+    void AddPlayerToList(GameObject player)
+    {
+        if (!players.Contains(player))
         {
-            canSeePlayer = false;
+            players.Add(player);
+        }
+    }
+
+    void AddTargetToList(Transform target)
+    {
+        if (!targets.Contains(target))
+        {
+            targets.Add(target);
+        }
+    }
+
+    void RemovePlayerFromList(GameObject player)
+    {
+        if (players.Contains(player)) 
+        {
+            players.Remove(player);
+        }
+    }
+
+
+    void RemoveTargetFromList(Transform target)
+    {
+        if (targets.Contains(target))
+        {
+            targets.Remove(target);
         }
     }
 }
