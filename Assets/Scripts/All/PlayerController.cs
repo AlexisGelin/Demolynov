@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public Collider weaponOnFloorCol;
     public Collider armL;
     public Collider armR;
+    public TrailRenderer weaponTrail;
 
 
 
@@ -67,10 +68,10 @@ public class PlayerController : MonoBehaviour
                 {
                     armL.enabled= true;
                     armR.enabled = true;
-
                 }
                 else
                 {
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = true;
                     weaponCol.enabled = true;
                 }
                 animationPlayer.SetBool("punch", true);
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = false;
                     weaponCol.enabled = false;
                 }
                 animationPlayer.SetBool("punch", false);
@@ -110,7 +112,8 @@ public class PlayerController : MonoBehaviour
                         weaponOnHand.transform.parent = null;
                     }
                     weaponOnHand = weaponOnFloor.gameObject;
-                    
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = false;
+                  
                     weaponOnHand.tag = "hitPlayer1";
                 }
             }
