@@ -49,13 +49,7 @@ public class PropsController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision,int damage)
-    {
-        if (collision.gameObject.tag.Equals("Weapon"))
-        {
-            takeDamage(collision.body.gameObject,damage);
-        }
-    }
+
 
     private void OnTriggerEnter(Collider other)
     {

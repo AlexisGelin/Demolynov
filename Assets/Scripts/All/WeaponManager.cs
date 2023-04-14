@@ -6,9 +6,6 @@ using UnityEngine;
 public class WeaponManager : MonoSingleton<WeaponManager>
 {
     public GameObject[] weapons;
-    bool waitingForSpawn = false;
-    [SerializeField] float randomTime;
-    [SerializeField] int weaponIDToSpawn;
 
 
     public GameObject GetRandomPowerUp()

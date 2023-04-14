@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ public class GamePanel : Panel
     [SerializeField] TMP_Text _totalTime;
     [SerializeField] GameObject _totalTouch;
 
+    public string TimeString;
     float _countdown;
 
 
@@ -27,8 +29,9 @@ public class GamePanel : Panel
 
     IEnumerator DisableTouch()
     {
+        _totalTouch.SetActive(true);
         yield return new WaitForSeconds(30);
-
+        _totalTouch.SetActive(false);
     }
 
     public override void ClosePanel()
@@ -41,6 +44,13 @@ public class GamePanel : Panel
         base.Init();
         _isPartyStart = false;
         _countdown = 60;
+    }
+
+    public void AddTime()
+    {
+        _countdown += 2;
+        _totalTime.GetComponent<RectTransform>().localScale = Vector3.one;
+        _totalTime.GetComponent<RectTransform>().DOPunchScale(new Vector3(.2F, .2f, .2F), .2f).OnComplete(() => _totalTime.GetComponent<RectTransform>().localScale = Vector3.one);
     }
 
     private void Update()
@@ -58,9 +68,9 @@ public class GamePanel : Panel
             int minutes = Mathf.FloorToInt(_countdown / 60);
             int seconds = Mathf.FloorToInt(_countdown - minutes * 60f);
 
-            string timeText = string.Format("{0:D2}:{1:D2}", minutes, seconds);
+            TimeString = string.Format("{0:D2}:{1:D2}", minutes, seconds);
 
-            _totalTime.text = "Time left\n" + timeText;
+            _totalTime.text = "Temps restant\n" + TimeString;
         }
     }
 }

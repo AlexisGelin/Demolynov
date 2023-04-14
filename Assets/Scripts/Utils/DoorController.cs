@@ -31,6 +31,7 @@ public class DoorController : MonoBehaviour
     {
         if (!_isAlreadyActivated)
         {
+            UIManager.Instance.GamePanel.AddTime();
             MapManager.Instance.GenerateRoom();
             _isAlreadyActivated = true;
         }
