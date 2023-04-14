@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 962110148546797769}
   - component: {fileID: 3080160178000024579}
   - component: {fileID: 4302933524327152709}
+  - component: {fileID: 6080164428103760767}
   m_Layer: 0
   m_Name: sideTable
   m_TagString: Untagged
@@ -101,6 +102,20 @@ MonoBehaviour:
   _score: 10
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &6080164428103760767
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584321238309369302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1305824884091912779, guid: fc742f66d39e4ad42824bf68ab84b6c1, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

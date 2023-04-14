@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6629978167175012851}
   - component: {fileID: 8927996269526193465}
   - component: {fileID: 7766284730384327362}
+  - component: {fileID: 439619185186537801}
   m_Layer: 0
   m_Name: coatRack
   m_TagString: Untagged
@@ -101,6 +102,20 @@ MonoBehaviour:
   _score: 10
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &439619185186537801
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982375190389896428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8240732501849174438, guid: 7f2baa3155e390f4492c34f2147eef59, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

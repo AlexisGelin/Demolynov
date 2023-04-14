@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 971331687746295500}
   - component: {fileID: 3070938518548259334}
   - component: {fileID: 1318136523619945636}
+  - component: {fileID: 4583859470614637842}
   m_Layer: 0
   m_Name: books
   m_TagString: Untagged
@@ -103,6 +104,20 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &4583859470614637842
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575530723799303123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7704667636870285680, guid: dc996fd777b1b594d9fdc6d484d6fc11, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

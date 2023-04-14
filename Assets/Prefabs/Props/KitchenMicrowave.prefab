@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4338555974396100530}
   - component: {fileID: 2004474456517888888}
   - component: {fileID: 4138962006192086457}
+  - component: {fileID: 4752203094898893713}
   m_Layer: 0
   m_Name: kitchenMicrowave
   m_TagString: Untagged
@@ -103,6 +104,20 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &4752203094898893713
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59020228607634093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7724472393993585006, guid: bec57a71d35ae8248b4ba57f3b1d6938, type: 3}
 --- !u!1 &3738408501048300767
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,6 +129,7 @@ GameObject:
   - component: {fileID: 1526267739984753703}
   - component: {fileID: 882186194414859766}
   - component: {fileID: 2221378405532334718}
+  - component: {fileID: 4990988196542487596}
   m_Layer: 0
   m_Name: Group
   m_TagString: Untagged
@@ -188,6 +204,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4990988196542487596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738408501048300767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -725798639059963842, guid: bec57a71d35ae8248b4ba57f3b1d6938, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0

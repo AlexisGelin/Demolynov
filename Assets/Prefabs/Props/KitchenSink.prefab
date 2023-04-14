@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3415600309886166479}
   - component: {fileID: 613141746404708613}
   - component: {fileID: 3327578785286744481}
+  - component: {fileID: 2276732845646183556}
   m_Layer: 0
   m_Name: kitchenSink
   m_TagString: Untagged
@@ -105,6 +106,20 @@ MonoBehaviour:
   _score: 10
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &2276732845646183556
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405876641150136528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8240650988795541290, guid: 4d619ac8ccb5668458cf0bb6709f8232, type: 3}
 --- !u!1 &2459550355838213602
 GameObject:
   m_ObjectHideFlags: 0

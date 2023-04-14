@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6453141536176351051}
   - component: {fileID: 9109336465926312833}
   - component: {fileID: 1156708120756259017}
+  - component: {fileID: 6328211523947719888}
   m_Layer: 0
   m_Name: loungeSofa
   m_TagString: Untagged
@@ -101,6 +102,20 @@ MonoBehaviour:
   _score: 30
   _source: {fileID: 0}
   _ps: {fileID: 8266259453695061272}
+--- !u!64 &6328211523947719888
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307689838250259028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7960909975771927058, guid: 031e67916ee5e6e4e981ea4b226c6ba5, type: 3}
 --- !u!1001 &6812558085880927806
 PrefabInstance:
   m_ObjectHideFlags: 0

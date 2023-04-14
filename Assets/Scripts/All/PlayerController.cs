@@ -8,17 +8,20 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed = 100f;
+    public int damage = 1;
     public int IDPlayer;
     public GameObject mesh;
     public Animator animationPlayer;
     public GameObject hand;
     public GameObject weaponOnHand;
     public GameObject weaponOnFloor;
+    public Weapon weapon;
+    public GameObject hitArea;
 
 
     private void Start()
     {
-
+        hitArea.SetActive(false);
     }
 
     void Update()
@@ -55,7 +58,9 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
+                hitArea.SetActive(true);
                 animationPlayer.SetBool("punch", true);
+                hitArea.SetActive(false);
             }
             if (Input.GetKeyUp(KeyCode.A))
             {
@@ -70,6 +75,7 @@ public class PlayerController : MonoBehaviour
                     weaponOnFloor.gameObject.transform.parent = hand.transform;
                     weaponOnFloor.gameObject.transform.localPosition = new Vector3(0.00111f, 0.00117f, -0.00092f);
                     weaponOnFloor.gameObject.transform.DOLocalRotate(new Vector3(0, 90, 180), 0.1f);
+                    weapon = weaponOnFloor.gameObject.GetComponent<Weapon>();
                     if (weaponOnHand != null)
                     {
                         weaponOnHand.transform.parent = null;

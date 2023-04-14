@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FxTemporaire
   - weapon
+  - hitPlayer1
+  - hitPlayer2
   layers:
   - Default
   - TransparentFX

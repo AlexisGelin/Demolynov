@@ -82,11 +82,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2580355762623719079}
   speed: 10
+  damage: 1
   IDPlayer: 0
   mesh: {fileID: 2688488232661282185}
   animationPlayer: {fileID: 8711247788859092297}
   hand: {fileID: 2903138287948001130}
   weaponOnHand: {fileID: 0}
+  weaponOnFloor: {fileID: 0}
 --- !u!136 &2580355762623719078
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -144,7 +146,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4787475189419715544}
-  m_LocalRotation: {x: 0.33725312, y: 0.00000005452122, z: -0.000000019531738, w: 0.941414}
+  m_LocalRotation: {x: 0.33725315, y: 0.00000001484359, z: -0.0000000053175824, w: 0.941414}
   m_LocalPosition: {x: -0.67000043, y: 12.429062, z: -17.251045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -295,8 +297,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7249541235600053446}
-  m_LocalRotation: {x: -0, y: -0.000000054402573, z: 0.000000044717343, w: 1}
-  m_LocalPosition: {x: 0.66999936, y: 3.9369361, z: 4.789629}
+  m_LocalRotation: {x: -0.000000029802322, y: -0.000000021843267, z: 0.000000017954534,
+    w: 1}
+  m_LocalPosition: {x: 0.6699999, y: 3.9369364, z: 4.7896285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

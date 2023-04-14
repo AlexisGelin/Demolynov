@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3073033745372758170}
   - component: {fileID: 955164034954146896}
   - component: {fileID: 8026884808672984666}
+  - component: {fileID: 8604972303223561241}
   m_Layer: 0
   m_Name: bathroomSinkSquare
   m_TagString: Untagged
@@ -102,6 +103,20 @@ MonoBehaviour:
   _score: 10
   _source: {fileID: 0}
   _ps: {fileID: 8259386828074680303}
+--- !u!64 &8604972303223561241
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603722170633295237}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8116046198993835594, guid: 47f46cd3837ab624f9fada1f36db4f56, type: 3}
 --- !u!1001 &6819446948936729801
 PrefabInstance:
   m_ObjectHideFlags: 0

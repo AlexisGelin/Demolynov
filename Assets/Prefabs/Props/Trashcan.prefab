@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1608945546190463191}
   - component: {fileID: 3580617043687363613}
   - component: {fileID: 2092855672166729174}
+  - component: {fileID: 2579186655902901009}
   m_Layer: 0
   m_Name: trashcan
   m_TagString: Untagged
@@ -101,6 +102,20 @@ MonoBehaviour:
   _score: 10
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+--- !u!64 &2579186655902901009
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075980856827737544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3618036406861190523, guid: 14ddc3adb3be95744a8e1b451c38eb1e, type: 3}
 --- !u!1001 &5369388884189753591
 PrefabInstance:
   m_ObjectHideFlags: 0
