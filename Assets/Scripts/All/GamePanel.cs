@@ -12,13 +12,13 @@ public class GamePanel : Panel
 
     float _countdown;
 
-    [Header("Player1")]
-    [SerializeField] TMP_Text _score;
 
     bool _isPartyStart;
 
     public override void OpenPanel()
     {
+        _isPartyStart = true;
+
         base.OpenPanel();
     }
 
@@ -46,8 +46,10 @@ public class GamePanel : Panel
                 GameManager.Instance.UpdateStateToEnd();
             }
 
-            TimeSpan timeSpan = TimeSpan.FromSeconds(_countdown);
-            string timeText = string.Format("{0:D2}:{1:D2}", timeSpan.Hours, timeSpan.Minutes);
+            int minutes = Mathf.FloorToInt(_countdown / 60);
+            int seconds = Mathf.FloorToInt(_countdown - minutes * 60f);
+
+            string timeText = string.Format("{0:D2}:{1:D2}", minutes, seconds);
 
             _totalTime.text = "Time left\n" + timeText;
         }

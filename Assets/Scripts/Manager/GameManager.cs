@@ -12,6 +12,8 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public event Action<GameState> OnGameStateChanged;
 
+    public PlayerController Player1, Player2;
+
     GameState _gameState;
     public GameState GameState { get => _gameState; }
 
@@ -24,6 +26,8 @@ public class GameManager : MonoSingleton<GameManager>
         UIManager.Instance.Init();
 
         MapManager.Instance.Init();
+
+        CameraManager.Instance.Init();
 
         ResetGame();
     }

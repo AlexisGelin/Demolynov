@@ -204,6 +204,8 @@ MonoBehaviour:
   _score: 30
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
+  player1: {fileID: 2580355762623719075, guid: 6c3e94a5943358341887967f5e36d3ad, type: 3}
+  player2: {fileID: 2580355762623719075, guid: 307f6d1afe409b74694e50155479ddba, type: 3}
 --- !u!64 &3594738665621171190
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     //Data
-    public float damage = 0;
+    public int damage = 0;
     public float range = 0;
 
 

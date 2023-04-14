@@ -10,6 +10,8 @@ public class DoorController : MonoBehaviour
     [SerializeField] ParticleSystem _particuleSmoke;
     [SerializeField] Collider col;
 
+    bool _isAlreadyActivated;
+
     private void OnTriggerEnter(Collider other)
     {
         _anim.SetBool("Open", true);
@@ -27,6 +29,10 @@ public class DoorController : MonoBehaviour
 
     public void generateNextRoom()
     {
-        Debug.Log("missing code");
+        if (!_isAlreadyActivated)
+        {
+            MapManager.Instance.GenerateRoom();
+            _isAlreadyActivated = true;
+        }
     }
 }
