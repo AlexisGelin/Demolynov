@@ -116,9 +116,21 @@ public class PlayerController : MonoBehaviour
             {
                 animationPlayer.SetBool("punch", false);
             }
-            if (Input.GetKey(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P))
             {
-
+                if (weaponOnHand != weaponOnFloor)
+                {
+                    weaponOnFloor.transform.rotation = new Quaternion(0, 0, 0, 0);
+                    animationPlayer.SetBool("haveWeapon", true);
+                    weaponOnFloor.gameObject.transform.parent = hand.transform;
+                    weaponOnFloor.gameObject.transform.localPosition = new Vector3(0.00111f, 0.00117f, -0.00092f);
+                    weaponOnFloor.gameObject.transform.DOLocalRotate(new Vector3(0, 90, 180), 0.1f);
+                    if (weaponOnHand != null)
+                    {
+                        weaponOnHand.transform.parent = null;
+                    }
+                    weaponOnHand = weaponOnFloor.gameObject;
+                }
             }
         }
     }
