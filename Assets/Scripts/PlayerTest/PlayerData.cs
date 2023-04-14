@@ -1,20 +1,29 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerData : MonoBehaviour
 {
-    private float speed;
+   [HideInInspector] public float speed;
     private bool isSpeedBoosted;
     private float remainingTimeSpeedBoost;
     [SerializeField] private float originSpeed;
-    private float force;
+    [NonSerialized] public float force;
     private bool isForceBoosted;
     private float remainingTimeForceBoost;
+    private bool isFreezeTime;
+    private float remainingTimeFreeze;
+
     [SerializeField] private float originForce;
-    [SerializeField] private bool freezeTime;
-    [SerializeField] private Text text;
+    [SerializeField] private GameObject freezeEffectImage; //canva avec une image
+    [SerializeField] private GamePanel panel;
+    [SerializeField] private ParticleSystem forceParticles;
+    [SerializeField] private ParticleSystem speedParticles;
+
     [Range(0, 10)] [SerializeField] private float durationOfSpeedBoost;
     [Range(0, 10)] [SerializeField] private float durationOfForceBoost;
+    [Range(0, 10)] [SerializeField] private float durationOfTimeFreeze;
+
 
     private void Awake()
     {
@@ -24,57 +33,41 @@ public class PlayerData : MonoBehaviour
 
     private void Update()
     {
-        text.text = "Speed : " + GetSpeed() + "\n" + remainingTimeSpeedBoost + "/" + durationOfSpeedBoost +
-                    "\nForce : " + GetForce() + "\n" + remainingTimeForceBoost + "/" + durationOfForceBoost;
-        if (Input.GetKeyDown(KeyCode.S))
+        if (durationOfForceBoost <= remainingTimeForceBoost)
         {
-            AddSpeedBoost(2);
-            isSpeedBoosted = true;
+            isForceBoosted = false;
+            forceParticles.Stop();
+            RemoveForceBoost();
         }
 
         if (durationOfSpeedBoost <= remainingTimeSpeedBoost)
         {
             isSpeedBoosted = false;
+            speedParticles.Stop();
             RemoveSpeedBoost();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (durationOfTimeFreeze <= remainingTimeFreeze)
         {
-            AddForceBoost(2);
-            isForceBoosted = true;
-        }
-
-        if (durationOfForceBoost <= remainingTimeForceBoost)
-        {
-            isForceBoosted = false;
-            RemoveForceBoost();
+            isFreezeTime = false;
+            freezeEffectImage.SetActive(false);
+            panel.PowerUpFreezeCoeff = 1;
         }
 
         if (isForceBoosted)
         {
-            remainingTimeForceBoost += 0.1f;
+            remainingTimeForceBoost += 1 * Time.deltaTime;
+        }
+
+        if (isFreezeTime)
+        {
+            remainingTimeFreeze += 1*Time.deltaTime;
         }
 
         if (isSpeedBoosted)
         {
-            remainingTimeSpeedBoost += 0.1f;
+            remainingTimeSpeedBoost += 1 * Time.deltaTime;
         }
-    }
-
-
-    private float GetSpeed()
-    {
-        return speed;
-    }
-
-    public float GetForce()
-    {
-        return force;
-    }
-
-    public bool GetFreezeTime()
-    {
-        return freezeTime;
     }
 
     private void AddSpeedBoost(float multiplier)
@@ -105,5 +98,33 @@ public class PlayerData : MonoBehaviour
     private void RemoveForceBoost()
     {
         force = originForce;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag.Equals("FreezeTime"))
+        {
+            remainingTimeFreeze = 0;
+            freezeEffectImage.SetActive(true);
+            isFreezeTime = true;
+            Destroy(collision.gameObject);
+            panel.PowerUpFreezeCoeff = 0;
+        }
+
+        if (collision.gameObject.tag.Equals("SpeedBoost"))
+        {
+            speedParticles.Play();
+            AddSpeedBoost(2);
+            isSpeedBoosted = true;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag.Equals("ForceBoost"))
+        {
+            forceParticles.Play();
+            AddForceBoost(2);
+            isForceBoosted = true;
+            Destroy(collision.gameObject);
+        }
     }
 }

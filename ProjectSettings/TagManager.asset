@@ -5,21 +5,30 @@ TagManager:
   serializedVersion: 2
   tags:
   - FxTemporaire
+  - Explosion
+  - FreezeTime
+  - SpeedBoost
+  - ForceBoost
+  - Undefined
   - weapon
-  - hitPlayer1
   - hitPlayer2
+  - hitPlayer1
+  - hitPlayer2e
+  - hitPlayer1e
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ground
   - Water
   - UI
+  - wall
   - 
   - 
+  - Target
+  - Obstruction
   - 
-  - P1Camera
-  - P2Camera
+  - 
   - 
   - 
   - 

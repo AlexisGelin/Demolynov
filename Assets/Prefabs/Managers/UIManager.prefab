@@ -5118,7 +5118,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1727641048534794348}
   PowerUpFreezeCoeff: 1
   _totalTime: {fileID: 0}
-  _score: {fileID: 0}
+  _totalTouch: {fileID: 0}
 --- !u!1 &1727641048537014759
 GameObject:
   m_ObjectHideFlags: 0
@@ -5509,7 +5509,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727641048649579090}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0

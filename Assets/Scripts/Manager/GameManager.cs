@@ -86,13 +86,13 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (_isPauseActive)
         {
+            HandleExitPause();
             _isPauseActive = false;
-            HandlePause();
             UIManager.Instance.HandleClosePause();
         }
         else
         {
-            HandleExitPause();
+            HandlePause();
             _isPauseActive = true;
             UIManager.Instance.HandleOpenPause();
         }
