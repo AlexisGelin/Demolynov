@@ -26,7 +26,7 @@ public class PropsController : MonoBehaviour
 
     public void takeDamage(GameObject player, int damage)
     {
-        _hp = _hp - damage;
+        StartCoroutine(CooldownHit(damage));
         if (_hp <= 0)
         {
             this.gameObject.SetActive(false);
@@ -62,4 +62,11 @@ public class PropsController : MonoBehaviour
             takeDamage(player2, other.gameObject.GetComponent<Weapon>().damage);
         }
     }
+
+    IEnumerator CooldownHit(int damage)
+    {
+        yield return (0.5f);
+        _hp = _hp - damage;
+    }
+
 }

@@ -18,10 +18,15 @@ public class PlayerController : MonoBehaviour
     public Weapon weapon;
     public Collider weaponCol;
     public Collider weaponOnFloorCol;
+    public Collider armL;
+    public Collider armR;
+
 
 
     private void Start()
     {
+        armL.enabled = false;
+        armR.enabled = false;
     }
 
     void Update()
@@ -58,18 +63,39 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))
             {
-                weaponCol.enabled = true;
+                if (!weaponOnHand)
+                {
+                    armL.enabled= true;
+                    armR.enabled = true;
+
+                }
+                else
+                {
+                    weaponCol.enabled = true;
+                }
                 animationPlayer.SetBool("punch", true);
             }
             if (Input.GetKeyUp(KeyCode.A))
             {
+                if (!weaponOnHand)
+                {
+                    armL.enabled = false;
+                    armR.enabled = false;
+                }
+                else
+                {
+                    weaponCol.enabled = false;
+                }
                 animationPlayer.SetBool("punch", false);
-                weaponCol.enabled = false;
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (weaponOnHand != weaponOnFloor)
                 {
+                    if (weaponCol != null)
+                    {
+                        weaponCol.enabled = true;
+                    }
                     weaponCol = weaponOnFloorCol;
                     weaponCol.enabled = false;
                     weaponOnFloor.transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -80,7 +106,6 @@ public class PlayerController : MonoBehaviour
                     weapon = weaponOnFloor.gameObject.GetComponent<Weapon>();
                     if (weaponOnHand != null)
                     {
-                        weaponCol = null;
                         weaponOnHand.tag = "weapon";
                         weaponOnHand.transform.parent = null;
                     }
@@ -143,7 +168,6 @@ public class PlayerController : MonoBehaviour
                     weaponOnFloor.gameObject.transform.DOLocalRotate(new Vector3(0, 90, 180), 0.1f);
                     if (weaponOnHand != null)
                     {
-                        weaponCol = null;
                         weaponOnHand.tag = "weapon";
                         weaponOnHand.transform.parent = null;
                     }
