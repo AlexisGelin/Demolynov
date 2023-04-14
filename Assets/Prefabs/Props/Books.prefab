@@ -104,7 +104,8 @@ MonoBehaviour:
   _score: 5
   _source: {fileID: 0}
   _ps: {fileID: 7403725290337143761}
-  LastPlayerController: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!64 &4583859470614637842
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -20,7 +20,14 @@ public class PlayerController : MonoBehaviour
     public Collider weaponOnFloorCol;
     public Collider armL;
     public Collider armR;
-    public TrailRenderer weaponTrail;
+    [SerializeField] TrailRenderer weaponTrail;
+
+
+    [SerializeField] int forwardMovement;
+    [SerializeField] int backwardMovement;
+    [SerializeField] int leftMovement;
+    [SerializeField] int rightMovement;
+
 
 
 
@@ -39,25 +46,51 @@ public class PlayerController : MonoBehaviour
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + (Vector3.forward).normalized * speed * Time.deltaTime;
+                forwardMovement = 1;
+                //rb.transform.position = transform.position + (Vector3.forward).normalized * speed * Time.deltaTime;
             }
+
+
+            // Release
+            if (Input.GetKeyUp(KeyCode.Z))
+            {
+                forwardMovement = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.Q))
+            {
+                leftMovement = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                backwardMovement = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                rightMovement = 0;
+            }
+
+
+
+
+
             if (Input.GetKey(KeyCode.Q))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, -90, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + (Vector3.left).normalized * speed * Time.deltaTime;
+                leftMovement = 1;
             }
             if (Input.GetKey(KeyCode.S))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + (Vector3.back).normalized * speed * Time.deltaTime;
+                backwardMovement = 1;
             }
             if (Input.GetKey(KeyCode.D))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 90, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + (Vector3.right).normalized * speed * Time.deltaTime;
+                rightMovement = 1;
+
             }
             if(!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.Z))
             {
@@ -118,6 +151,9 @@ public class PlayerController : MonoBehaviour
                     weaponOnHand.tag = "hitPlayer1";
                 }
             }
+
+            rb.transform.position = transform.position + new Vector3(rightMovement - leftMovement, 0, forwardMovement - backwardMovement).normalized * speed * Time.deltaTime;
+
         }
         if (IDPlayer == 1)
         {
@@ -125,25 +161,47 @@ public class PlayerController : MonoBehaviour
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.forward * speed * Time.deltaTime;
+                forwardMovement = 1;
             }
+
+
+            // Release
+            if (Input.GetKeyUp(KeyCode.O))
+            {
+                forwardMovement = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.K))
+            {
+                leftMovement = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.L))
+            {
+                backwardMovement = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.M))
+            {
+                rightMovement = 0;
+            }
+
+
+
             if (Input.GetKey(KeyCode.K))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, -90, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.left * speed * Time.deltaTime;
+                leftMovement = 1;
             }
             if (Input.GetKey(KeyCode.L))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.back * speed * Time.deltaTime;
+                backwardMovement = 1;
             }
             if (Input.GetKey(KeyCode.M))
             {
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 90, 0), 1f).SetEase(Ease.OutQuart);
-                rb.transform.position = transform.position + Vector3.right * speed * Time.deltaTime;
+                rightMovement = 1;
             }
             if (!Input.GetKey(KeyCode.O) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.L) && !Input.GetKey(KeyCode.M))
             {
@@ -204,6 +262,9 @@ public class PlayerController : MonoBehaviour
                     weaponOnHand.tag = "hitPlayer2";
                 }
             }
+
+            rb.transform.position = transform.position + new Vector3(rightMovement - leftMovement, 0, forwardMovement - backwardMovement).normalized * speed * Time.deltaTime;
+
         }
     }
 
