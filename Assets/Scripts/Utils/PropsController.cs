@@ -56,7 +56,6 @@ public class PropsController : MonoBehaviour
         if (other.CompareTag("hitPlayer1"))
         {
             takeDamage(player1, other.gameObject.GetComponent<Weapon>().damage);
-            
         }
     }
 }
