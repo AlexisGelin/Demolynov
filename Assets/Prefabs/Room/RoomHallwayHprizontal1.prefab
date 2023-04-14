@@ -221,10 +221,15 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8147984771034475668, guid: d87513b3b8b0a8047aba53d8de545ab9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8373832920904396376, guid: d87513b3b8b0a8047aba53d8de545ab9,
         type: 3}
       propertyPath: _isNextRoomLeft
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8521243870203632394, guid: d87513b3b8b0a8047aba53d8de545ab9,
         type: 3}
