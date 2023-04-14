@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,12 +42,23 @@ public class PropsController : MonoBehaviour
             this.gameObject.transform.DOPunchPosition(destination, 0.5f);
         }
     }
-
+    public void takeDamage()
+    {
+        Destroy(gameObject);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag.Equals("Weapon"))
         {
             takeDamage(collision.body.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals(("Explosion")))
+        {
+            takeDamage();
         }
     }
 }
