@@ -150,18 +150,40 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.I))
             {
-                weaponCol.enabled = true;
+                if (!weaponOnHand)
+                {
+                    armL.enabled = true;
+                    armR.enabled = true;
+                }
+                else
+                {
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = true;
+                    weaponCol.enabled = true;
+                }
                 animationPlayer.SetBool("punch", true);
             }
             if (Input.GetKeyUp(KeyCode.I))
             {
+                if (!weaponOnHand)
+                {
+                    armL.enabled = false;
+                    armR.enabled = false;
+                }
+                else
+                {
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = false;
+                    weaponCol.enabled = false;
+                }
                 animationPlayer.SetBool("punch", false);
-                weaponCol.enabled = false;
             }
             if (Input.GetKeyDown(KeyCode.P))
             {
                 if (weaponOnHand != weaponOnFloor)
                 {
+                    if (weaponCol != null)
+                    {
+                        weaponCol.enabled = true;
+                    }
                     weaponCol = weaponOnFloorCol;
                     weaponCol.enabled = false;
                     weaponOnFloor.transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -169,12 +191,15 @@ public class PlayerController : MonoBehaviour
                     weaponOnFloor.gameObject.transform.parent = hand.transform;
                     weaponOnFloor.gameObject.transform.localPosition = new Vector3(0.00111f, 0.00117f, -0.00092f);
                     weaponOnFloor.gameObject.transform.DOLocalRotate(new Vector3(0, 90, 180), 0.1f);
+                    weapon = weaponOnFloor.gameObject.GetComponent<Weapon>();
                     if (weaponOnHand != null)
                     {
                         weaponOnHand.tag = "weapon";
                         weaponOnHand.transform.parent = null;
                     }
                     weaponOnHand = weaponOnFloor.gameObject;
+                    weaponOnHand.GetComponentInChildren<TrailRenderer>().enabled = false;
+
                     weaponOnHand.tag = "hitPlayer2";
                 }
             }
