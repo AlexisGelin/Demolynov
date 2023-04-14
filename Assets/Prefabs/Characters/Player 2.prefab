@@ -133,6 +133,8 @@ MonoBehaviour:
   originForce: 5
   freezeEffectImage: {fileID: 0}
   panel: {fileID: 0}
+  forceParticles: {fileID: 0}
+  speedParticles: {fileID: 0}
   durationOfSpeedBoost: 5
   durationOfForceBoost: 5
   durationOfTimeFreeze: 5
@@ -182,8 +184,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4787475189419715544}
-  m_LocalRotation: {x: 0.33725315, y: 0.000000038064055, z: -0.000000013636107, w: 0.941414}
-  m_LocalPosition: {x: -0.00000047683716, y: 12.429062, z: -11.051045}
+  m_LocalRotation: {x: 0.33725315, y: 0.00000003764444, z: -0.000000013485784, w: 0.941414}
+  m_LocalPosition: {x: -0.00000035762787, y: 12.429062, z: -11.051044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -333,7 +335,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7249541235600053446}
-  m_LocalRotation: {x: -0, y: 6.92701e-10, z: -5.693783e-10, w: 1}
+  m_LocalRotation: {x: 0.000000029802322, y: 0.000000021755437, z: -0.00000001788234,
+    w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -615,10 +618,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.77095747
   m_Height: 4.3
   m_Direction: 1
-  m_Center: {x: 0, y: 1.593539, z: 0}
+  m_Center: {x: 0.010625899, y: 1.593539, z: 0.015938759}
 --- !u!4 &7658948633432900692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f0b8c78bebd9154687ed28c6b91e69f,
