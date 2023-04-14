@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerData : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerData : MonoBehaviour
     private float remainingTimeFreeze;
 
     [SerializeField] private float originForce;
+    [SerializeField] private GameObject freezeEffectImage; //canva avec une image
     [SerializeField] private GamePanel panel;
     [Range(0, 10)] [SerializeField] private float durationOfSpeedBoost;
     [Range(0, 10)] [SerializeField] private float durationOfForceBoost;
@@ -43,6 +45,8 @@ public class PlayerData : MonoBehaviour
         if (durationOfTimeFreeze <= remainingTimeFreeze)
         {
             isFreezeTime = false;
+            freezeEffectImage.SetActive(false);
+
             panel.PowerUpFreezeCoeff = 1;
         }
 
@@ -97,6 +101,7 @@ public class PlayerData : MonoBehaviour
         if (collision.gameObject.tag.Equals("FreezeTime"))
         {
             remainingTimeFreeze = 0;
+            freezeEffectImage.SetActive(true);
             isFreezeTime = true;
             Destroy(collision.gameObject);
             panel.PowerUpFreezeCoeff = 0;
