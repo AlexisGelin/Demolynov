@@ -9,6 +9,7 @@ public class GamePanel : Panel
     public int PowerUpFreezeCoeff = 1;
 
     [SerializeField] TMP_Text _totalTime;
+    [SerializeField] GameObject _totalTouch;
 
     float _countdown;
 
@@ -19,7 +20,15 @@ public class GamePanel : Panel
     {
         _isPartyStart = true;
 
+        StartCoroutine(DisableTouch());
+
         base.OpenPanel();
+    }
+
+    IEnumerator DisableTouch()
+    {
+        yield return new WaitForSeconds(30);
+
     }
 
     public override void ClosePanel()
@@ -31,7 +40,7 @@ public class GamePanel : Panel
     {
         base.Init();
         _isPartyStart = false;
-        _countdown = 180;
+        _countdown = 60;
     }
 
     private void Update()

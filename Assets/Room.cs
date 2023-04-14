@@ -17,7 +17,7 @@ public class Room : MonoBehaviour
 
         foreach (var weaponSpawn in _weaponSpawn)
         {
-            //Instantiate(PowerUpManager.Instance.GetRandomPowerUp(), _weaponSpawn);
+            Instantiate(WeaponManager.Instance.GetRandomPowerUp(), weaponSpawn);
         }
     }
 

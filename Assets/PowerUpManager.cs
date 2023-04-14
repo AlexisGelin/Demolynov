@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PowerUpManager : MonoSingleton<PowerUpManager>
 {
-    public List<PowerUp> powerUpList;
+    public List<GameObject> powerUpList;
 
-    public PowerUp GetRandomPowerUp()
+    public GameObject GetRandomPowerUp()
     {
         return powerUpList[Random.Range(0, powerUpList.Count)];
     }

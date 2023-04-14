@@ -1,13 +1,13 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Animations;
 
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
-    public float speed = 100f;
     public int damage = 1;
     public int IDPlayer;
     public GameObject mesh;
@@ -15,13 +15,13 @@ public class PlayerController : MonoBehaviour
     public GameObject hand;
     public GameObject weaponOnHand;
     public GameObject weaponOnFloor;
-    public PlayerData _playerData;
     public Weapon weapon;
     public Collider weaponCol;
     public Collider weaponOnFloorCol;
     public Collider armL;
     public Collider armR;
     [SerializeField] TrailRenderer weaponTrail;
+    public PlayerData Data;
 
 
     [SerializeField] int forwardMovement;
@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
                 animationPlayer.SetBool("walk", true);
                 mesh.transform.DORotate(new Vector3(0, 0, 0), 1f).SetEase(Ease.OutQuart);
                 forwardMovement = 1;
-                //rb.transform.position = transform.position + (Vector3.forward).normalized * speed * Time.deltaTime;
             }
 
 
@@ -150,7 +149,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            rb.transform.position = transform.position + new Vector3(rightMovement - leftMovement, 0, forwardMovement - backwardMovement).normalized * speed * Time.deltaTime;
+            rb.transform.position = transform.position + new Vector3(rightMovement - leftMovement, 0, forwardMovement - backwardMovement).normalized * Data.speed * Time.deltaTime;
 
         }
         if (IDPlayer == 1)
@@ -261,7 +260,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            rb.transform.position = transform.position + new Vector3(rightMovement - leftMovement, 0, forwardMovement - backwardMovement).normalized * speed * Time.deltaTime;
+            rb.transform.position = transform.position + new Vector3(rightMovement - leftMovement, 0, forwardMovement - backwardMovement).normalized * Data.speed * Time.deltaTime;
 
         }
     }

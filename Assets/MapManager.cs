@@ -11,6 +11,7 @@ public class MapManager : MonoSingleton<MapManager>
     public void Init()
     {
         _lastRoom = _startRoom;
+        _lastRoom.Init();
         GenerateRoom();
     }
 
@@ -33,5 +34,7 @@ public class MapManager : MonoSingleton<MapManager>
         {
             _lastRoom = Instantiate(_rightRoom[Random.Range(0, _rightRoom.Count)], _lastRoom.transform.position + new Vector3(30, 0, 0), Quaternion.identity);
         }
+
+        _lastRoom.Init();
     }
 }
