@@ -469,8 +469,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 356794130}
   speed: 10
+  damage: 1
   IDPlayer: 1
   mesh: {fileID: 919132147644564113}
+  animationPlayer: {fileID: 0}
+  hand: {fileID: 0}
+  weaponOnHand: {fileID: 0}
+  weaponOnFloor: {fileID: 0}
+  _playerData: {fileID: 0}
+  weapon: {fileID: 0}
+  weaponCol: {fileID: 0}
+  weaponOnFloorCol: {fileID: 0}
+  armL: {fileID: 0}
+  armR: {fileID: 0}
+  weaponTrail: {fileID: 0}
 --- !u!136 &356794129
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1177,8 +1189,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1774628733}
   speed: 10
+  damage: 1
   IDPlayer: 0
   mesh: {fileID: 919132148592414715}
+  animationPlayer: {fileID: 0}
+  hand: {fileID: 0}
+  weaponOnHand: {fileID: 0}
+  weaponOnFloor: {fileID: 0}
+  _playerData: {fileID: 0}
+  weapon: {fileID: 0}
+  weaponCol: {fileID: 0}
+  weaponOnFloorCol: {fileID: 0}
+  armL: {fileID: 0}
+  armR: {fileID: 0}
+  weaponTrail: {fileID: 0}
 --- !u!54 &1774628733
 Rigidbody:
   m_ObjectHideFlags: 0
