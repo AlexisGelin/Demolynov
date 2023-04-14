@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    //Data
+    public float damage = 0;
+    public float range = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
